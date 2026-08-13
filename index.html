@@ -1,58 +1,313 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой первый сайт</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: white;
-      text-align: center;
+<title>Aleksandr Studio</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b18;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(7,11,24,.75);
+    backdrop-filter: blur(15px);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 28px;
+    opacity: .75;
+    transition: .3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 8% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+    radial-gradient(circle at 20% 30%, #183b7a 0%, transparent 35%),
+    radial-gradient(circle at 80% 60%, #542060 0%, transparent 35%),
+    #070b18;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 100px;
+    margin-bottom: 25px;
+    color: #b8c8ff;
+}
+
+h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: .95;
+    margin: 0;
+    letter-spacing: -4px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,#7ba8ff,#d485ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 30px auto;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #adb5cc;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.primary {
+    background: white;
+    color: #070b18;
+}
+
+.secondary {
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+/* CARDS */
+
+.services {
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 35px;
+    min-height: 230px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,.08);
+}
+
+.icon {
+    font-size: 35px;
+}
+
+.card h3 {
+    font-size: 23px;
+}
+
+.card p {
+    color: #9ca6be;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 50px;
+    text-align: center;
+    color: #68728b;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    header {
+        padding: 18px 5%;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-      box-sizing: border-box;
+    nav {
+        display: none;
     }
 
     h1 {
-      font-size: 55px;
-      margin-bottom: 15px;
+        letter-spacing: -2px;
     }
 
-    p {
-      font-size: 22px;
-      color: #c7cbd6;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
-    .button {
-      margin-top: 25px;
-      padding: 15px 30px;
-      background: white;
-      color: #0b1020;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-  </style>
+}
+</style>
 </head>
+
 
 <body>
 
-  <section class="hero">
-    <h1>Мой первый сайт</h1>
-    <p>Этот сайт создан вместе с искусственным интеллектом.</p>
-    <a class="button" href="#">Начать</a>
-  </section>
+<header>
+
+<div class="logo">
+ALEKSANDR.
+</div>
+
+<nav>
+<a href="#home">Главная</a>
+<a href="#services">Возможности</a>
+<a href="#contact">Контакты</a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+✦ Первый эксперимент с AI
+</div>
+
+<h1>
+Создавай.<br>
+<span class="gradient-text">Экспериментируй.</span>
+</h1>
+
+<p>
+Это мой первый веб-проект, созданный с помощью искусственного интеллекта.
+Я изучаю, как идеи превращаются в настоящие сайты.
+</p>
+
+<div class="buttons">
+
+<a href="#services" class="button primary">
+Посмотреть ↓
+</a>
+
+<a href="#contact" class="button secondary">
+Контакты
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="services" id="services">
+
+<h2>Что здесь происходит?</h2>
+
+<div class="cards">
+
+<div class="card">
+  <div class="icon">✦</div>
+<h3>Идея</h3>
+<p>
+Сначала мы описываем словами, каким должен быть сайт и что должен увидеть посетитель.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">⌘</div>
+<h3>Код</h3>
+<p>
+HTML и CSS превращают идею в настоящий интерфейс, который работает в браузере.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">↗</div>
+<h3>Публикация</h3>
+<p>
+GitHub хранит проект, а GitHub Pages делает его доступным в интернете.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer id="contact">
+
+ALEKSANDR · Первый веб-эксперимент · 2026
+
+</footer>
 
 </body>
 </html>
