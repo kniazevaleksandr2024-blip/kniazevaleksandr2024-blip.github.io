@@ -139,9 +139,15 @@ nav a {
   letter-spacing: 2px;
 }
 
-.marquee-track {
-  display: inline-block;
+  .marquee-track {
+  display: flex;
+  width: max-content;
   animation: move 18s linear infinite;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 @keyframes move {
@@ -477,22 +483,27 @@ footer {
 
 <div class="marquee">
   <div class="marquee-track">
-    🍕 FOOD &nbsp; ✦ &nbsp;
-    ☕ COFFEE &nbsp; ✦ &nbsp;
-    🗽 NYC &nbsp; ✦ &nbsp;
-    🍸 BARS &nbsp; ✦ &nbsp;
-    🚶 WALKS &nbsp; ✦ &nbsp;
-    🍜 RESTAURANTS &nbsp; ✦ &nbsp;
-    🍕 FOOD &nbsp; ✦ &nbsp;
-    ☕ COFFEE &nbsp; ✦ &nbsp;
-    🗽 NYC &nbsp; ✦ &nbsp;
-    🍸 BARS &nbsp; ✦ &nbsp;
-    🚶 WALKS &nbsp; ✦ &nbsp;
-    🍜 RESTAURANTS
+
+    <div class="marquee-content">
+      🍕 FOOD &nbsp; ✦ &nbsp;
+      ☕ COFFEE &nbsp; ✦ &nbsp;
+      🗽 NYC &nbsp; ✦ &nbsp;
+      🍸 BARS &nbsp; ✦ &nbsp;
+      🚶 WALKS &nbsp; ✦ &nbsp;
+      🍲 RESTAURANTS &nbsp; ✦ &nbsp;
+    </div>
+
+    <div class="marquee-content">
+      🍕 FOOD &nbsp; ✦ &nbsp;
+      ☕ COFFEE &nbsp; ✦ &nbsp;
+      🗽 NYC &nbsp; ✦ &nbsp;
+      🍸 BARS &nbsp; ✦ &nbsp;
+      🚶 WALKS &nbsp; ✦ &nbsp;
+      🍲 RESTAURANTS &nbsp; ✦ &nbsp;
+    </div>
+
   </div>
 </div>
-
-
 <section class="intro">
 
   <div>
