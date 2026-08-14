@@ -140,13 +140,13 @@ nav a {
 }
 
   .marquee-track {
-  display: flex;
-  width: max-content;
-  animation: move 18s linear infinite;
+    display: flex;
+    width: max-content;
+    animation: move 18s linear infinite;
+    will-change: transform;
 }
-
 .marquee-content {
-    flex-shrink: 0;
+    flex: 0 0 auto;
     white-space: nowrap;
     padding-right: 40px;
 }
