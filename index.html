@@ -148,11 +148,12 @@ nav a {
 .marquee-content {
     flex-shrink: 0;
     white-space: nowrap;
+    padding-right: 40px;
 }
   @keyframes move {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+  to { transform: translateX(calc(-50% - 20px)); }
+  }
 
 /* INTRO */
 
